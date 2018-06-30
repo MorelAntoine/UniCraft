@@ -11,6 +11,8 @@ The library supports both 2D and 3D and provides essential components and system
 Information
 ===========
 
+The library is developed under the Unity 2018.1.2f1 version.
+
 To see the current status of the project, check the "Projects" panel and then "Main board".
 
 The documentation will be available when there are enough elements to build a V1. Nevertheless, each section has examples of uses for ease of handling.
