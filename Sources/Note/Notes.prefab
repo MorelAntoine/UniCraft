@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1841420435372400}
+  m_IsPrefabParent: 1
+--- !u!1 &1841420435372400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4399617652559364}
+  - component: {fileID: 114344040849006876}
+  - component: {fileID: 114375302662308210}
+  - component: {fileID: 114201102168866508}
+  - component: {fileID: 114172390740870254}
+  - component: {fileID: 114426440540511606}
+  m_Layer: 0
+  m_Name: Notes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4399617652559364
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841420435372400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.017011642, y: 0.934782, z: -0.521101}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114172390740870254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841420435372400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fedc033005b5894abda512e804ad761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Author: Uni
+  Content: 
+  Status: {r: 1, g: 0, b: 0, a: 0}
+  Title: High priority
+--- !u!114 &114201102168866508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841420435372400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fedc033005b5894abda512e804ad761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Author: Uni
+  Content: 
+  Status: {r: 1, g: 0.5592827, b: 0, a: 0}
+  Title: Medium priority
+--- !u!114 &114344040849006876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841420435372400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fedc033005b5894abda512e804ad761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Author: Uni
+  Content: 
+  Status: {r: 1, g: 1, b: 1, a: 0}
+  Title: Information
+--- !u!114 &114375302662308210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841420435372400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fedc033005b5894abda512e804ad761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Author: Uni
+  Content: 
+  Status: {r: 1, g: 1, b: 0, a: 0}
+  Title: Low priority
+--- !u!114 &114426440540511606
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841420435372400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fedc033005b5894abda512e804ad761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Author: Uni
+  Content: 
+  Status: {r: 0.62001216, g: 1, b: 0.2783019, a: 0}
+  Title: Done
