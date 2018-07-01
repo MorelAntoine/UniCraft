@@ -1,6 +1,7 @@
 ﻿using UniCraft.Character.System.Core.Motion.State;
 using UniCraft.Character.System.Core.Profile;
 using UniCraft.Gamepad.Core;
+using UniCraft.Toolbox.Attribute;
 using UnityEngine;
 
 namespace UniCraft.Character.System.Core
@@ -17,8 +18,8 @@ namespace UniCraft.Character.System.Core
 		////////// Information
 
 		[Header("M.S.M - Information")]
-		[SerializeField] private AMotionState _currentState;
-		[SerializeField] private AMotionState _previousState;
+		[DisableInInspector, SerializeField] private AMotionState _currentState;
+		[DisableInInspector, SerializeField] private AMotionState _previousState;
 		private bool _is3DMode;
 		
 		////////// Settings
@@ -29,9 +30,8 @@ namespace UniCraft.Character.System.Core
 		
 		////////// Profiles //////////
 
-		[Header("Profiles")]
-		[SerializeField] private AttributesProfile _attributes;
-		[SerializeField] private InformationProfile _information;
+		private AttributesProfile _attributes;
+		private InformationProfile _information;
 		
 		////////////////////////////////
 		////////// Properties //////////
