@@ -3,10 +3,10 @@ using UnityEngine;
 
 namespace UniCraft.Toolbox.Attribute
 {
-	public class DisableInInspector : PropertyAttribute
+	public class DisableInInspectorAttribute : PropertyAttribute
 	{}
 
-	[CustomPropertyDrawer(typeof(DisableInInspector))]
+	[CustomPropertyDrawer(typeof(DisableInInspectorAttribute))]
 	public class DisableInInspectorDrawer : PropertyDrawer
 	{
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
