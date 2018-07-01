@@ -18,14 +18,14 @@ namespace UniCraft.Inventory
 		
 		////////// Basic information //////////
 
-		public string Name
-		{
-			get { return _name; }
-		}
-		
 		public string Description
 		{
 			get { return _description; }
+		}
+		
+		public string Name
+		{
+			get { return _name; }
 		}
 	}
 }
