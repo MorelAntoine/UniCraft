@@ -9,9 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 106bab4f3b5df0a4c81d33b237500a86, type: 3}
-  m_Name: WalkToIdle
+  m_Name: ToJump
   m_EditorClassIdentifier: 
-  _conditions:
-  - {fileID: 11400000, guid: fec08899e868b574cbf8fb15bcafc074, type: 2}
-  _onSuccesState: {fileID: 11400000, guid: 2a776d98d86ac8542a4c66a559d75cfd, type: 2}
+  _conditions: []
+  _onSuccesState: {fileID: 0}
   _onFailureState: {fileID: 0}

@@ -21,6 +21,8 @@ namespace UniCraft.Character.System.Core.Motion.State.Locomotion
 		}
 
 		public override void Move2D(CharacterSystem2D cs2D, GamepadInputInformation inputInfos)
-		{}
+		{
+			cs2D.transform.Translate(inputInfos.MotionHorizontalAxisValue * cs2D.Attributes.WalkSpeed * Time.deltaTime, 0f, 0f);
+		}
 	}
 }
