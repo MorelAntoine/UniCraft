@@ -3,8 +3,9 @@ using UnityEngine;
 
 namespace UniCraft.Gamepad
 {
-	[System.Serializable]
-	public class GamepadSystem
+	[AddComponentMenu("UniCraft/GamepadSystem")]
+	[DisallowMultipleComponent]
+	public sealed class GamepadSystem : MonoBehaviour
 	{
 		////////////////////////////////
 		////////// Attributes //////////

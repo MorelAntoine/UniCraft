@@ -6,14 +6,14 @@ using UnityEngine;
 namespace UniCraft.Character.Behaviour
 {
 	[DisallowMultipleComponent]
-	[RequireComponent(typeof(ACharacterSystem))]
+	[RequireComponent(typeof(ACharacterSystem), typeof(GamepadSystem))]
 	public abstract class ACharacterBehaviour : MonoBehaviour
 	{
 		////////////////////////////////
 		////////// Attributes //////////
 
 		private ACharacterSystem _characterSystem;
-		[SerializeField] private GamepadSystem _gamepadSystem;
+		private GamepadSystem _gamepadSystem;
 
 		////////////////////////////////
 		////////// Properties //////////
@@ -31,17 +31,18 @@ namespace UniCraft.Character.Behaviour
 		/////////////////////////////
 		////////// Methods //////////
 
-		////////// Character Behaviour callbacks //////////
-
-		protected abstract void Initialize();
+		////////// Callbacks //////////
 		
+		////////// ACharacterBehaviour
+		
+		protected abstract void Initialize();
 		protected abstract void UpdateInputInfos();
 		
-		////////// MonoBehaviour callbacks //////////
+		////////// MonoBehaviour
 		
 		private void Awake()
 		{
-			_characterSystem = GetComponent<ACharacterSystem>();
+			LoadComponents();
 			Initialize();
 		}
 		
@@ -53,6 +54,14 @@ namespace UniCraft.Character.Behaviour
 		private void Update()
 		{
 			UpdateInputInfos();
+		}
+		
+		////////// Services //////////
+
+		private void LoadComponents()
+		{
+			_characterSystem = GetComponent<ACharacterSystem>();
+			_gamepadSystem = GetComponent<GamepadSystem>();
 		}
 	}
 }

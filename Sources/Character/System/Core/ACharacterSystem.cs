@@ -20,7 +20,6 @@ namespace UniCraft.Character.System.Core
 		[Header("M.S.M - Information")]
 		[DisableInInspector, SerializeField] private AMotionState _currentState;
 		[DisableInInspector, SerializeField] private AMotionState _previousState;
-		private bool _is3DMode;
 		
 		////////// Settings
 
@@ -32,6 +31,10 @@ namespace UniCraft.Character.System.Core
 
 		private AttributesProfile _attributes;
 		private InformationProfile _information;
+		
+		////////// Resources //////////
+		
+		private bool _is3DMode;
 		
 		////////////////////////////////
 		////////// Properties //////////
@@ -51,7 +54,9 @@ namespace UniCraft.Character.System.Core
 		/////////////////////////////
 		////////// Methods //////////
 		
-		////////// Character System callbacks //////////
+		////////// Callbacks //////////
+		
+		////////// ACharacterSystem
 		
 		public void UpdateMotionStateMachine(GamepadInputInformation inputInfos)
 		{
@@ -69,7 +74,7 @@ namespace UniCraft.Character.System.Core
 			}
 		}
 		
-		////////// MonoBehaviour callbacks //////////
+		////////// MonoBehaviour
 
 		private void Awake()
 		{
