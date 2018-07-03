@@ -11,4 +11,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2949112b92f5a18438ecdf2a57515f5c, type: 3}
   m_Name: Jump
   m_EditorClassIdentifier: 
-  _transitions: []
+  _transitions:
+  - {fileID: 11400000, guid: 48493d2cc4430054184d79e427a59ad6, type: 2}
+  - {fileID: 11400000, guid: 9ab86486f19eb8d48b6c2436cad30a23, type: 2}

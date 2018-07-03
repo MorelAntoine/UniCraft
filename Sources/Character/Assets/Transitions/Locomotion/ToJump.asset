@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106bab4f3b5df0a4c81d33b237500a86, type: 3}
   m_Name: ToJump
   m_EditorClassIdentifier: 
-  _conditions: []
-  _onSuccesState: {fileID: 0}
+  _conditions:
+  - {fileID: 11400000, guid: 9beec50ea0cfa444da2221ee595e159f, type: 2}
+  _onSuccesState: {fileID: 11400000, guid: 6611326a7d51301479335aee374c2fba, type: 2}
   _onFailureState: {fileID: 0}

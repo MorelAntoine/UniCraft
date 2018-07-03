@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106bab4f3b5df0a4c81d33b237500a86, type: 3}
   m_Name: ToWalk
   m_EditorClassIdentifier: 
-  _conditions: []
-  _onSuccesState: {fileID: 0}
+  _conditions:
+  - {fileID: 11400000, guid: 4099375881f5c0942969b411bb9ba692, type: 2}
+  _onSuccesState: {fileID: 11400000, guid: 1e38415fa9e47c342870ad9320ae67d1, type: 2}
   _onFailureState: {fileID: 0}

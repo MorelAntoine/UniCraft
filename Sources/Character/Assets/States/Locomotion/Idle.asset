@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Name: Idle
   m_EditorClassIdentifier: 
   _transitions:
-  - {fileID: 11400000, guid: cbdbff08b7661bd428bf06f3fd86f71b, type: 2}
+  - {fileID: 11400000, guid: 37028453251182d4e933950e2207cff4, type: 2}
+  - {fileID: 11400000, guid: 9ab86486f19eb8d48b6c2436cad30a23, type: 2}
