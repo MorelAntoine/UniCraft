@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fefb307b95aa84a98c68070dbf60a0, type: 3}
+  m_Name: Crouch Walk
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 11400000, guid: 095d2e996ef10b24ba001d52f079f4c4, type: 2}
+  - {fileID: 11400000, guid: 5939beb9a089d194f97f0a7a57b5a1a4, type: 2}
+  - {fileID: 11400000, guid: 9ded7a575bf0f8749bcebdcc1e921b36, type: 2}

@@ -2,25 +2,25 @@
 
 namespace UniCraft.Character.System.Core.Profile
 {
-	/// <inheritdoc/>
-	/// <summary>
-	/// Component class used by ACharacterSystem to hold information about a character
-	/// </summary>
-	[DisallowMultipleComponent]
-	public class InformationProfile : MonoBehaviour
+	[global::System.Serializable]
+	public sealed class InformationProfile
 	{
-		////////////////////////////////
-		////////// Attributes //////////
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
 		
+		//////////////////////////////////////////
 		////////// Personal information //////////
 
 		[Header("Personal information")]
 		[SerializeField] private string _firstName;
 		[SerializeField] private string _lastName;
 
-		////////////////////////////////
-		////////// Properties //////////
+		//////////////////////////////
+		////////// Property //////////
+		//////////////////////////////
 
+		//////////////////////////////////////////
 		////////// Personal information //////////
 
 		public string FirstName

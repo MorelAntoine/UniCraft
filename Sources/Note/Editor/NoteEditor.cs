@@ -7,41 +7,43 @@ namespace UniCraft.Note.Editor
 	[CustomEditor(typeof(Note))]
 	public sealed class NoteEditor : UnityEditor.Editor
 	{
-		////////////////////////////////
-		////////// Attributes //////////
-		////////////////////////////////
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
 		
-		////////// Default settings //////////
+		/////////////////////////////////////
+		////////// Default setting //////////
 
 		private const string AuthorLabel = "Made by:";
 		private const float AuthorLabelWidth = 60f;
 		private const float AuthorFieldWidth = 100f;
 		private const float ColorFieldWidth = 16f;
 		private const float ContentHeight = 150f;
+		private const string ContentLabel = "Content";
 		private const float ContentSpaceOffset = -10f;
 		private const float SpaceBetweenField = 6f;
 		private const float TitleFieldWidth = 160f;
 
-		////////// GUI Contents //////////
-		
-		private readonly GUIContent _emptyGuiContent = new GUIContent("");
-		
-		////////// GUI Resources //////////
+		//////////////////////////////////
+		////////// GUI resource //////////
 		
 		private bool _contentToggle;
+		private readonly GUIContent _emptyGuiContent = new GUIContent("");
 		
-		////////// Serialized properties //////////
+		/////////////////////////////////////////
+		////////// Serialized property //////////
 		
 		private SerializedProperty _author;
 		private SerializedProperty _content;
 		private SerializedProperty _status;
 		private SerializedProperty _title;
 
-		/////////////////////////////
-		////////// Methods //////////
-		/////////////////////////////
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
 		
-		////////// Callbacks of MonoBehaviour //////////
+		////////////////////////////////////////////
+		////////// MonoBehaviour callback //////////
 		
 		private void OnEnable()
 		{
@@ -60,7 +62,8 @@ namespace UniCraft.Note.Editor
 			serializedObject.ApplyModifiedProperties();
 		}
 
-		////////// Drawings //////////
+		/////////////////////////////
+		////////// Drawing //////////
 		
 		private void DrawAuthor()
 		{
@@ -74,7 +77,7 @@ namespace UniCraft.Note.Editor
 		private void DrawContent()
 		{
 			GUILayout.Space(SpaceBetweenField);
-			_contentToggle = EditorGUILayout.Foldout(_contentToggle, "Content");
+			_contentToggle = EditorGUILayout.Foldout(_contentToggle, ContentLabel);
 			if (!_contentToggle) return;
 			GUILayout.Space(ContentSpaceOffset);
 			EditorGUILayout.PropertyField(_content, _emptyGuiContent, GUILayout.Height(ContentHeight));

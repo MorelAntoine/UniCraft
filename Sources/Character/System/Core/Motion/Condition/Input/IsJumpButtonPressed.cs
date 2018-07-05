@@ -1,19 +1,23 @@
-﻿using UniCraft.Gamepad.Core;
+﻿using UniCraft.Toolbox.Component.GamepadSystem.Core;
 using UnityEngine;
 
 namespace UniCraft.Character.System.Core.Motion.Condition.Input
 {
-	[CreateAssetMenu(menuName = "UniCraft/Character/Condition/IsJumpButtonPressed")]
+	[CreateAssetMenu(menuName = "UniCraft/Character/Condition/Input/IsJumpButtonPressed")]
 	public class IsJumpButtonPressed : AMotionCondition
 	{
-		public override bool IsComplete(CharacterSystem cs, GamepadInputInformation inputInfos)
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
+		
+		public override bool IsComplete(CharacterSystem cs, GamepadInputInformation inputInformation)
 		{
-			return (inputInfos.JumpButtonValue);
+			return (inputInformation.JumpButtonValue);
 		}
 
-		public override bool IsComplete2D(CharacterSystem2D cs2D, GamepadInputInformation inputInfos)
+		public override bool IsComplete2D(CharacterSystem2D cs2D, GamepadInputInformation inputInformation)
 		{
-			return (inputInfos.JumpButtonValue);
+			return (inputInformation.JumpButtonValue);
 		}
 	}
 }

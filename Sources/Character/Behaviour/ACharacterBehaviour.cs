@@ -1,6 +1,6 @@
 ﻿using UniCraft.Character.System.Core;
-using UniCraft.Gamepad;
-using UniCraft.Gamepad.Core;
+using UniCraft.Toolbox.Component.GamepadSystem;
+using UniCraft.Toolbox.Component.GamepadSystem.Core;
 using UnityEngine;
 
 namespace UniCraft.Character.Behaviour
@@ -9,59 +9,55 @@ namespace UniCraft.Character.Behaviour
 	[RequireComponent(typeof(ACharacterSystem), typeof(GamepadSystem))]
 	public abstract class ACharacterBehaviour : MonoBehaviour
 	{
-		////////////////////////////////
-		////////// Attributes //////////
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
 
 		private ACharacterSystem _characterSystem;
 		private GamepadSystem _gamepadSystem;
 
-		////////////////////////////////
-		////////// Properties //////////
+		//////////////////////////////
+		////////// Property //////////
+		//////////////////////////////
 
 		protected GamepadConfiguration GamepadConfiguration
 		{
 			get { return _gamepadSystem.Configuration; }
 		}
 
-		protected GamepadInputInformation InputInfos
+		protected GamepadInputInformation InputInformation
 		{
-			get { return _gamepadSystem.InputInfos; }
+			get { return _gamepadSystem.InputInformation; }
 		}
 		
-		/////////////////////////////
-		////////// Methods //////////
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
 
-		////////// Callbacks //////////
-		
-		////////// ACharacterBehaviour
+		/////////////////////////////////////////////////
+		////////// ACharacterBehaviour callback /////////
 		
 		protected abstract void Initialize();
-		protected abstract void UpdateInputInfos();
+		protected abstract void UpdateInputInformation();
 		
-		////////// MonoBehaviour
+		///////////////////////////////////////////
+		////////// MonoBehaviour callback /////////
 		
 		private void Awake()
 		{
-			LoadComponents();
+			_characterSystem = GetComponent<ACharacterSystem>();
+			_gamepadSystem = GetComponent<GamepadSystem>();
 			Initialize();
 		}
 		
 		private void FixedUpdate()
 		{
-			_characterSystem.UpdateMotionStateMachine(InputInfos);
+			_characterSystem.UpdateMotionStateMachine(_gamepadSystem.InputInformation);
 		}
 
 		private void Update()
 		{
-			UpdateInputInfos();
-		}
-		
-		////////// Services //////////
-
-		private void LoadComponents()
-		{
-			_characterSystem = GetComponent<ACharacterSystem>();
-			_gamepadSystem = GetComponent<GamepadSystem>();
+			UpdateInputInformation();
 		}
 	}
 }

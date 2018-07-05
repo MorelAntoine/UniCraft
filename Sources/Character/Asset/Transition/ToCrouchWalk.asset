@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 106bab4f3b5df0a4c81d33b237500a86, type: 3}
+  m_Name: ToCrouchWalk
+  m_EditorClassIdentifier: 
+  _conditions:
+  - {fileID: 11400000, guid: 351be4baa8ba6964791f6d8e8d7630f1, type: 2}
+  - {fileID: 11400000, guid: 20c942d7a914a95439ce3cb1cda80e23, type: 2}
+  - {fileID: 11400000, guid: b7f508b0c7a41ef48ae4cd31851383ec, type: 2}
+  _stateOnSuccess: {fileID: 11400000, guid: e3ee0c3ebe6bb8b4bb1fe67e60e23808, type: 2}
+  _stateOnFailure: {fileID: 0}

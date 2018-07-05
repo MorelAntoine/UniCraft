@@ -1,28 +1,26 @@
-﻿using UniCraft.Gamepad.Core;
+﻿using UniCraft.Toolbox.Component.GamepadSystem.Core;
 using UnityEngine;
 
 namespace UniCraft.Character.System.Core.Motion.Condition.Input
 {
-	[CreateAssetMenu(menuName = "UniCraft/Character/Condition/AreMotionAxisPressed")]
+	[CreateAssetMenu(menuName = "UniCraft/Character/Condition/Input/AreMotionAxisPressed")]
 	public class AreMotionAxisPressed : AMotionCondition
 	{
-		////////// AMotionCondition callbacks //////////
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
 
-		public override bool IsComplete(CharacterSystem cs, GamepadInputInformation inputInfos)
-		{
-			return (ConditionLogic(inputInfos));
-		}
-
-		public override bool IsComplete2D(CharacterSystem2D cs2D, GamepadInputInformation inputInfos)
-		{
-			return (ConditionLogic(inputInfos));
-		}
+		///////////////////////////////////////////////
+		////////// AMotionCondition callback //////////
 		
-		////////// Services //////////
-
-		private static bool ConditionLogic(GamepadInputInformation inputInfos)
+		public override bool IsComplete(CharacterSystem cs, GamepadInputInformation inputInformation)
 		{
-			return (inputInfos.MotionHorizontalAxisValue != 0f || inputInfos.MotionVerticalAxisValue != 0f);
+			return (inputInformation.MotionHorizontalAxisValue != 0f || inputInformation.MotionVerticalAxisValue != 0f);
+		}
+
+		public override bool IsComplete2D(CharacterSystem2D cs2D, GamepadInputInformation inputInformation)
+		{
+			return (inputInformation.MotionHorizontalAxisValue != 0f || inputInformation.MotionVerticalAxisValue != 0f);
 		}
 	}
 }

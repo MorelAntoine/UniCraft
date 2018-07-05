@@ -1,50 +1,59 @@
 ﻿using UniCraft.Character.System.Core.Motion.Transition;
-using UniCraft.Gamepad.Core;
+using UniCraft.Toolbox.Component.GamepadSystem.Core;
 using UnityEngine;
 
 namespace UniCraft.Character.System.Core.Motion.State
 {
 	public abstract class AMotionState : ScriptableObject
 	{	
-		////////////////////////////////
-		////////// Attributes //////////
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
 
-		////////// Resources //////////
+		//////////////////////////////
+		////////// Resource //////////
 
 		private AMotionState _nextMotionState;
 		
-		////////// Settings //////////
+		/////////////////////////////
+		////////// Setting //////////
 		
-		[Header("Settings")]
+		[Header("Setting")]
 		[SerializeField] private MotionTransition[] _transitions;
 		
-		/////////////////////////////
-		////////// Methods //////////
-
-		public AMotionState AttemptToGetNextState(CharacterSystem cs, GamepadInputInformation inputInfos)
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
+		
+		/////////////////////////
+		////////// API //////////
+		
+		public AMotionState AttemptToGetNextState(CharacterSystem cs, GamepadInputInformation inputInformation)
 		{
 			foreach (var t in _transitions)
 			{
-				_nextMotionState = t.GetNextState(cs, inputInfos);
+				_nextMotionState = t.GetNextState(cs, inputInformation);
 				if (_nextMotionState != null)
 					return (_nextMotionState);
 			}
 			return (null);
 		}
 
-		public AMotionState AttemptToGetNextState2D(CharacterSystem2D cs2D, GamepadInputInformation inputInfos)
+		public AMotionState AttemptToGetNextState2D(CharacterSystem2D cs2D, GamepadInputInformation inputInformation)
 		{
 			foreach (var t in _transitions)
 			{
-				_nextMotionState = t.GetNextState2D(cs2D, inputInfos);
+				_nextMotionState = t.GetNextState2D(cs2D, inputInformation);
 				if (_nextMotionState != null)
 					return (_nextMotionState);
 			}
 			return (null);
 		}
 		
-		public abstract void Move(CharacterSystem cs, GamepadInputInformation inputInfos);
-
-		public abstract void Move2D(CharacterSystem2D cs2D, GamepadInputInformation inputInfos);
+		//////////////////////////////
+		////////// Callback //////////
+		
+		public abstract void Move(CharacterSystem cs, GamepadInputInformation inputInformation);
+		public abstract void Move2D(CharacterSystem2D cs2D, GamepadInputInformation inputInformation);
 	}
 }

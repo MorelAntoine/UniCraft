@@ -2,28 +2,35 @@
 
 namespace UniCraft.Character.System.Core.Profile
 {
-	/// <inheritdoc/>
-	/// <summary>
-	/// Component class used by ACharacterSystem to hold attribute information
-	/// </summary>
-	[DisallowMultipleComponent]
-	public class AttributesProfile : MonoBehaviour
+	[global::System.Serializable]
+	public sealed class AttributesProfile
 	{
-		////////////////////////////////
-		////////// Attributes //////////
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
 		
-		////////// Locomotion settings //////////
+		////////////////////////////////////////
+		////////// Locomotion setting //////////
 
-		[Header("Locomotion settings")]
+		[Header("Locomotion setting")]
+		[SerializeField, Range(0f, 2f)] private float _crouchSpeed = 0.9f;
 		[SerializeField, Range(0f, 8f)] private float _jumpHeight = 1.5f;
 		[SerializeField, Range(0f, 10f)] private float _runSpeed = 5.4f;
 		[SerializeField, Range(30f, 120f)] private float _turnSpeed = 90f;
 		[SerializeField, Range(0f, 4f)] private float _walkSpeed = 1.8f;
 
-		////////////////////////////////
-		////////// Properties //////////
+		//////////////////////////////
+		////////// Property //////////
+		//////////////////////////////
+		
+		////////////////////////////////////////
+		////////// Locomotion setting //////////
 
-		////////// Locomotion settings //////////
+		public float CrouchSpeed
+		{
+			get { return _crouchSpeed; }
+			set { _crouchSpeed = value; }
+		}
 
 		public float JumpHeight
 		{

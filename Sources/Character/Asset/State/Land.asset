@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76ba053a62e620a45879fefb31d88c1f, type: 3}
+  m_Name: Land
+  m_EditorClassIdentifier: 
+  _transitions:
+  - {fileID: 11400000, guid: c8c5dc6ed6921f947b4b3a99497b7b0a, type: 2}
+  - {fileID: 11400000, guid: 5939beb9a089d194f97f0a7a57b5a1a4, type: 2}
+  - {fileID: 11400000, guid: cc2dabfdc93216b48a07374d1de95aa0, type: 2}
