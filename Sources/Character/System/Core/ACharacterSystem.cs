@@ -13,10 +13,10 @@ namespace UniCraft.Character.System.Core
 		////////// Attribute //////////
 		///////////////////////////////
 		
-		///////////////////////////
-		////////// Debug //////////
+		/////////////////////////////////
+		////////// Information //////////
 		
-		[Header("Debug")]
+		[Header("Information")]
 		[DisableInInspector, SerializeField] private AMotionState _currentState;
 		[DisableInInspector, SerializeField] private AMotionState _previousState;
 
@@ -46,6 +46,19 @@ namespace UniCraft.Character.System.Core
 		//////////////////////////////
 		////////// Property //////////
 		//////////////////////////////
+
+		/////////////////////////////////
+		////////// Information //////////
+
+		public AMotionState CurrentState
+		{
+			get { return _currentState; }
+		}
+
+		public AMotionState PreviousState
+		{
+			get { return _previousState; }
+		}
 
 		/////////////////////////////
 		////////// Profile //////////
@@ -105,8 +118,6 @@ namespace UniCraft.Character.System.Core
 			if (_currentState == null)
 				Debug.LogError(NoStartingStateMessage);
 			_is3DMode = GetType() == typeof(CharacterSystem);
-			if (_previousState != null)
-				_previousState.ToString(); // Remove unused warning
 		}
 		
 		////////////////////////////////////////////

@@ -47,8 +47,9 @@ namespace UniCraft.Character.Behaviour.Controller
 
 		private void HandleButtons()
 		{
-			InputInformation.JumpButtonValue = Input.GetButtonDown(GamepadConfiguration.JumpButtonName);
 			InputInformation.CrouchButtonValue = Input.GetButton(GamepadConfiguration.CrouchButtonName);
+			InputInformation.JumpButtonValue = Input.GetButtonDown(GamepadConfiguration.JumpButtonName);
+			InputInformation.RunButtonValue = Input.GetButton(GamepadConfiguration.RunButtonName);
 		}
 		
 		private void HandleRawAxis()
