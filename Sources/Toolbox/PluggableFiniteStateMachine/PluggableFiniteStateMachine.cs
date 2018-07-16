@@ -37,33 +37,42 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 
 		[CustomHeader("Setting")]
 		[SerializeField, IndentLevel(1)] private AState _entryState;
+		[SerializeField, IndentLevel(1)] private bool _useDebugLog;
+		
+		/////////////////////////////////////
+		////////// Warning Message //////////
+		
+		private const string NoEntryStateMessage = "[PluggableFiniteStateMachine] There is no Entry State!";
 		
 		////////////////////////////
 		////////// Method //////////
 		////////////////////////////
 		
-		/// <summary>
-		/// Attempts to transit to a next state
-		/// </summary>
-		public void AttemptToTransit()
+		////////////////////////////////////////////
+		////////// MonoBehaviour Callback //////////
+
+		private void Awake()
 		{
-			_nextState = _currentState.AttemptToGetNextState(_datas);
-			
-			if (_nextState != null)
-			{
-				_previousState = _currentState;
-				_currentState = _previousState;
-			}
+			Initialize();
 		}
 
-		/// <summary>
-		/// Runs the current state
-		/// </summary>
-		public void RunCurrentState()
+		private void FixedUpdate()
 		{
-			_currentState.Run(_datas);
+			if (_currentState != null && _datas != null)
+				RunCurrentState();
 		}
 
+		private void Update()
+		{
+			if (_currentState != null && _datas != null)
+				AttemptToTransit();
+		}
+
+		/////////////////////////////////////////////////
+		////////// PluggableFiniteStateMachine //////////
+		
+		////////// API //////////
+		
 		/// <summary>
 		/// Updates the pluggable finite state machine datas
 		/// </summary>
@@ -71,6 +80,51 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		public void UpdateDatas(params object[] datas)
 		{
 			_datas = datas;
+		}
+		
+		////////// Service //////////
+		
+		/// <summary>
+		/// Attempts to transit to a next state
+		/// </summary>
+		private void AttemptToTransit()
+		{
+			_nextState = _currentState.AttemptToGetNextState(_datas);
+			
+			if (_nextState != null)
+			{
+				_previousState = _currentState;
+				_currentState = _nextState;
+				if (_useDebugLog)
+					DisplayDebugLog();
+			}
+		}
+
+		/// <summary>
+		/// Display on the console the current transition
+		/// </summary>
+		private void DisplayDebugLog()
+		{
+			Debug.Log(_previousState + " -> " + _currentState);
+		}
+		
+		/// <summary>
+		/// Initializes the pluggable finite state machine
+		/// </summary>
+		private void Initialize()
+		{
+			if (_entryState != null)
+				_currentState = _entryState;
+			else
+				Debug.LogError(NoEntryStateMessage);
+		}
+		
+		/// <summary>
+		/// Runs the current state
+		/// </summary>
+		private void RunCurrentState()
+		{
+			_currentState.Run(_datas);
 		}
 	}
 }
