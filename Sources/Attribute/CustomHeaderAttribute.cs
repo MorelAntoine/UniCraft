@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using UniCraft.Toolbox.Class.Utility;
+using UnityEditor;
 using UnityEngine;
 
 namespace UniCraft.Attribute
@@ -23,7 +24,7 @@ namespace UniCraft.Attribute
         ////////// Method //////////
         ////////////////////////////
         
-        public CustomHeaderAttribute(string label, int indentLevel = 0, float spaceBefore = 6f, float spaceAfter = 2.5f)
+        public CustomHeaderAttribute(string label, int indentLevel = -1, float spaceBefore = 6f, float spaceAfter = 2.5f)
         {
             Label = label;
             LabelSize = EditorStyles.boldLabel.CalcSize(new GUIContent(Label));
@@ -52,7 +53,6 @@ namespace UniCraft.Attribute
         ////////// Resource //////////
 
         private CustomHeaderAttribute _customHeaderAttribute;
-        private int _previousIndentLevel;
         
         ////////////////////////////
         ////////// Method //////////
@@ -74,9 +74,9 @@ namespace UniCraft.Attribute
 
             if (_customHeaderAttribute == null)
                 return;
-            SetupIndentLevel();
+            EditorDrawerUtility.BeginIndentLevel(_customHeaderAttribute.IndentLevel);
             DrawCustomHeader(position);
-            ResetIndentLevel();
+            EditorDrawerUtility.EndIndentLevel();
         }
         
         /////////////////////////////
@@ -87,20 +87,6 @@ namespace UniCraft.Attribute
             guiPosition.size.Set(_customHeaderAttribute.LabelSize.x, _customHeaderAttribute.LabelSize.y);
             guiPosition.y += GuiStartY + _customHeaderAttribute.SpaceBefore;
             EditorGUI.LabelField(guiPosition, _customHeaderAttribute.Label, EditorStyles.boldLabel);
-        }
-        
-        /////////////////////////////
-        ////////// Service //////////
-
-        private void SetupIndentLevel()
-        {
-            _previousIndentLevel = EditorGUI.indentLevel;
-            EditorGUI.indentLevel = _customHeaderAttribute.IndentLevel;
-        }
-
-        private void ResetIndentLevel()
-        {
-            EditorGUI.indentLevel = _previousIndentLevel;
         }
     }
 }

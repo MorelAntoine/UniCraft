@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using UniCraft.Toolbox.Class.Utility;
+using UnityEditor;
 using UnityEngine;
 
 namespace UniCraft.Attribute
@@ -33,7 +34,6 @@ namespace UniCraft.Attribute
 		///////////////////////////////
 		
 		private IndentLevelAttribute _indentLevelAttribute;
-		private int _previousIndentLevel;
 		
 		////////////////////////////
 		////////// Method //////////
@@ -45,10 +45,9 @@ namespace UniCraft.Attribute
 
 			if (_indentLevelAttribute == null)
 				return;
-			_previousIndentLevel = EditorGUI.indentLevel;
-			EditorGUI.indentLevel = _indentLevelAttribute.IndentLevel;
+			EditorDrawerUtility.BeginIndentLevel(_indentLevelAttribute.IndentLevel);
 			EditorGUI.PropertyField(position, property, label);
-			EditorGUI.indentLevel = _previousIndentLevel;
+			EditorDrawerUtility.EndIndentLevel();
 		}
 	}
 }
