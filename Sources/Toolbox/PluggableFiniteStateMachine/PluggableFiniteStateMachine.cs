@@ -24,20 +24,20 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		
 		////////// Data //////////
 		
-		private object[] _datas;
+		protected object[] Datas;
 		
 		////////// State //////////
 		
 		[CustomHeader("Information")]
-		[SerializeField, DisableInInspector(1)] private AState _currentState;
-		[SerializeField, DisableInInspector(1)] private AState _previousState;
+		[SerializeField, DisableInInspector(1)] protected AState CurrentState;
+		[SerializeField, DisableInInspector(1)] protected AState PreviousState;
 		
 		/////////////////////////////
 		////////// Setting //////////
 
 		[CustomHeader("Setting")]
-		[SerializeField, IndentLevel(1)] private AState _entryState;
-		[SerializeField, IndentLevel(1)] private bool _useDebugLog;
+		[SerializeField, IndentLevel(1)] protected AState EntryState;
+		[SerializeField, IndentLevel(1)] protected bool UseDebugLog;
 		
 		/////////////////////////////////////
 		////////// Warning Message //////////
@@ -51,20 +51,20 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		////////////////////////////////////////////
 		////////// MonoBehaviour Callback //////////
 
-		private void Awake()
+		protected virtual void Awake()
 		{
 			Initialize();
 		}
 
-		private void FixedUpdate()
+		protected virtual void FixedUpdate()
 		{
-			if (_currentState != null && _datas != null)
+			if (CurrentState != null && Datas != null)
 				RunCurrentState();
 		}
 
-		private void Update()
+		protected virtual void Update()
 		{
-			if (_currentState != null && _datas != null)
+			if (CurrentState != null && Datas != null)
 				AttemptToTransit();
 		}
 
@@ -79,7 +79,7 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		/// <param name="datas">The new pluggable finite state machine datas</param>
 		public void UpdateDatas(params object[] datas)
 		{
-			_datas = datas;
+			Datas = datas;
 		}
 		
 		////////// Service //////////
@@ -89,13 +89,13 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		/// </summary>
 		private void AttemptToTransit()
 		{
-			_nextState = _currentState.AttemptToGetNextState(_datas);
+			_nextState = CurrentState.AttemptToGetNextState(Datas);
 			
 			if (_nextState != null)
 			{
-				_previousState = _currentState;
-				_currentState = _nextState;
-				if (_useDebugLog)
+				PreviousState = CurrentState;
+				CurrentState = _nextState;
+				if (UseDebugLog)
 					DisplayDebugLog();
 			}
 		}
@@ -103,18 +103,18 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		/// <summary>
 		/// Display on the console the current transition
 		/// </summary>
-		private void DisplayDebugLog()
+		protected virtual void DisplayDebugLog()
 		{
-			Debug.Log(_previousState + " -> " + _currentState);
+			Debug.Log(PreviousState + " -> " + CurrentState);
 		}
 		
 		/// <summary>
 		/// Initializes the pluggable finite state machine
 		/// </summary>
-		private void Initialize()
+		protected virtual void Initialize()
 		{
-			if (_entryState != null)
-				_currentState = _entryState;
+			if (EntryState != null)
+				CurrentState = EntryState;
 			else
 				Debug.LogError(NoEntryStateMessage);
 		}
@@ -124,7 +124,7 @@ namespace UniCraft.Toolbox.PluggableFiniteStateMachine
 		/// </summary>
 		private void RunCurrentState()
 		{
-			_currentState.Run(_datas);
+			CurrentState.Run(Datas);
 		}
 	}
 }
