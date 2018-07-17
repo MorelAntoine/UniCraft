@@ -1,16 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using UniCraft.Character.MotionStateMachine;
 using UnityEngine;
 
-public class ACharacterBehaviour : MonoBehaviour {
+namespace UniCraft.Character.Behaviour
+{
+	public abstract class ACharacterBehaviour : MonoBehaviour
+	{
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
+		
+		///////////////////////////////
+		////////// Component //////////
 
-	// Use this for initialization
-	void Start () {
+		[SerializeField] private MotionStateMachine.MotionStateMachine _motionStateMachine;
+
+		//////////////////////////////
+		////////// Property //////////
+		//////////////////////////////
+
+		/////////////////////////////////
+		////////// Information //////////
 		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		////////// Motion State Machine //////////
 		
+		protected MotionInformation MotionInformation
+		{
+			get { return (_motionStateMachine.MotionInformation); }
+		}
+		
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
+
+		protected abstract void UpdateMotionInformation();
 	}
 }
