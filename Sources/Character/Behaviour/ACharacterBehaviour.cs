@@ -46,14 +46,18 @@ namespace UniCraft.Character.Behaviour
 		////////////////////////////////////////////
 		////////// MonoBehaviour Callback //////////
 
-		private void Awake()
+		protected virtual void Awake()
 		{
 			_motionStateMachine = GetComponent<MotionStateMachine.MotionStateMachine>();
 			Initialize();
 		}
 
-		private void Update()
+		/// <summary>
+		/// Updates the behavior by resetting and then updating the motion information
+		/// </summary>
+		protected virtual void Update()
 		{
+			MotionInformation.Reset();
 			UpdateMotionInformation();
 		}
 	}
