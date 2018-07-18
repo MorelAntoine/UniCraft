@@ -55,7 +55,8 @@ namespace UniCraft.Character.MotionStateMachine.State
         {
             if (mi.Use3DMode)
                 Run3D(cs as ACharacterSystem3D, mi);
-            Run2D(cs as ACharacterSystem2D, mi);
+            else
+                Run2D(cs as ACharacterSystem2D, mi);
         }
 
         /// <summary>
