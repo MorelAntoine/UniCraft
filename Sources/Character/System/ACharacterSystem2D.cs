@@ -1,8 +1,52 @@
-﻿using UnityEngine;
+﻿using UniCraft.Attribute;
+using UnityEngine;
 
 namespace UniCraft.Character.System
 {
-	public abstract class ACharacterSystem2D : ACharacterSystem
+	/// <inheritdoc/>
+	/// <summary>
+	/// Base class to create a 2D character system
+	/// </summary>
+	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
+	public class ACharacterSystem2D : ACharacterSystem
 	{
+		///////////////////////////////
+		////////// Attribute //////////
+		///////////////////////////////
+
+		[CustomHeader("Base Component")]
+		[SerializeField, IndentLevel(1)] private Animator _animator;
+		[SerializeField, IndentLevel(1)] private Collider2D _collider2D;
+		[SerializeField, IndentLevel(1)] private Rigidbody2D _rigidbody2D;
+		
+		//////////////////////////////
+		////////// Property //////////
+		//////////////////////////////
+
+		public Animator Animator
+		{
+			get { return _animator; }
+		}
+
+		public Collider2D Collider2D
+		{
+			get { return _collider2D; }
+		}
+
+		public Rigidbody2D Rigidbody2D
+		{
+			get { return _rigidbody2D; }
+		}
+
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
+
+		protected override void LoadComponents()
+		{
+			if (_animator == null) _animator = GetComponent<Animator>();
+			if (_collider2D == null) _collider2D = GetComponent<Collider2D>();
+			if (_rigidbody2D == null) _rigidbody2D = GetComponent<Rigidbody2D>();
+		}
 	}
 }
