@@ -111,7 +111,7 @@ namespace UniCraft.Character.MotionStateMachine
         /// </summary>
         private void DisplayDebugLog()
         {
-            Debug.Log("[MotionStateMachine] " + _previousState + " -> " + _currentState);
+            Debug.Log("[MotionStateMachine] " + _previousState.GetType().Name + " -> " + _currentState.GetType().Name);
         }
 
         /// <summary>
