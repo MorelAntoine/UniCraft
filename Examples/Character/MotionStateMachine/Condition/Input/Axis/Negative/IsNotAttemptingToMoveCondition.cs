@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace UniCraft.Examples.Character.MotionStateMachine.Condition.Input.Axis.Negative
 {
-	[CreateAssetMenu(menuName = "UniCraft/Character/Condition//Input/Axis/Positive/IsNotAttemptingToMove")]
+	[CreateAssetMenu(menuName = "UniCraft/Character/Condition/Input/Axis/Negative/IsNotAttemptingToMove")]
 	public class IsNotAttemptingToMoveCondition : AMotionCondition
 	{
 		protected override bool IsComplete2D(ACharacterSystem2D cs2D, MotionInformation mi)
