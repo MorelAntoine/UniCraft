@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace UniCraft.Character.Profile.Information.Base
+namespace UniCraft.Character.Profile.Information
 {
 	[global::System.Serializable]
-	public class BasePersonalInformationProfile
+	public class BaseInformationProfile
 	{
 		///////////////////////////////
 		////////// Attribute //////////

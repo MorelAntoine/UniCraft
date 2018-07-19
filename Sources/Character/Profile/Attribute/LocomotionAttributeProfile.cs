@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace UniCraft.Character.Profile.Attribute.Base
+namespace UniCraft.Character.Profile.Attribute
 {
     [global::System.Serializable]
-    public class BaseLocomotionAttributeProfile
+    public class LocomotionAttributeProfile
     {
         ///////////////////////////////
         ////////// Attribute //////////

@@ -1,5 +1,5 @@
-﻿using UniCraft.Character.Profile.Attribute.Base;
-using UniCraft.Character.Profile.Information.Base;
+﻿using UniCraft.Character.Profile.Attribute;
+using UniCraft.Character.Profile.Information;
 using UnityEngine;
 
 namespace UniCraft.Character.System
@@ -15,23 +15,23 @@ namespace UniCraft.Character.System
 		////////// Attribute //////////
 		///////////////////////////////
 
-		[SerializeField] private BaseLocomotionAttributeProfile _baseLocomotionAttribute;
-		[SerializeField] private BasePersonalInformationProfile _basePersonalInformation;
+		[SerializeField] private BaseInformationProfile _baseInformation;
+		[SerializeField] private LocomotionAttributeProfile _locomotionAttribute;
 		
 		//////////////////////////////
 		////////// Property //////////
 		//////////////////////////////
 
-		public BaseLocomotionAttributeProfile BaseLocomotionAttribute
+		public BaseInformationProfile BaseInformation
 		{
-			get { return _baseLocomotionAttribute; }
+			get { return _baseInformation; }
 		}
 
-		public BasePersonalInformationProfile BasePersonalInformation
+		public LocomotionAttributeProfile LocomotionAttribute
 		{
-			get { return _basePersonalInformation; }
+			get { return _locomotionAttribute; }
 		}
-		
+
 		////////////////////////////
 		////////// Method //////////
 		////////////////////////////
