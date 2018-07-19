@@ -6,5 +6,13 @@
 	/// </summary>
 	public abstract class AHumanoidSystem3D : ACharacterSystem3D
 	{
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
+
+		protected override void LoadComponents()
+		{
+			base.LoadComponents();
+		}
 	}
 }

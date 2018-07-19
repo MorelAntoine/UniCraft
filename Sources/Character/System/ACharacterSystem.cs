@@ -31,5 +31,19 @@ namespace UniCraft.Character.System
 		{
 			get { return _basePersonalInformation; }
 		}
+		
+		////////////////////////////
+		////////// Method //////////
+		////////////////////////////
+
+		protected virtual void Awake()
+		{
+			LoadComponents();
+		}
+
+		/// <summary>
+		/// Callback to load all the required components for the character system
+		/// </summary>
+		protected abstract void LoadComponents();
 	}
 }

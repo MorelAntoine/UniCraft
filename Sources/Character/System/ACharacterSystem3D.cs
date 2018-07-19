@@ -40,7 +40,7 @@ namespace UniCraft.Character.System
 		////////// Method //////////
 		////////////////////////////
 
-		protected virtual void Awake()
+		protected override void LoadComponents()
 		{
 			if (_animator == null) _animator = GetComponent<Animator>();
 			if (_collider == null) _collider = GetComponent<Collider>();
