@@ -21,10 +21,9 @@ namespace UniCraft.Character.MotionStateMachine.Transition
         /////////////////////////////
         ////////// Setting //////////
         
-        [SectionHeader("SETTING")]
-        
         ////////// Condition //////////
         
+        [CustomHeader("Condition")]
         [SerializeField] private AMotionCondition[] _conditions;
         
         ////////// Exit State //////////
