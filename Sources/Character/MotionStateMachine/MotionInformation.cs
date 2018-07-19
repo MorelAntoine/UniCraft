@@ -32,7 +32,7 @@ namespace UniCraft.Character.MotionStateMachine
         ////////// Axis //////////
         
         [CustomHeader("Axis Input")]
-        [SerializeField, DisableInInspector(1)] private Vector3 _movementDirection;
+        [DisableInInspector(1)] public Vector3 MovementDirection;
         
         //////////////////////////////
         ////////// Property //////////
@@ -68,14 +68,6 @@ namespace UniCraft.Character.MotionStateMachine
         {
             get { return _run; }
             set { _run = value; }
-        }
-
-        ////////// Axis //////////
-
-        public Vector3 MovementDirection
-        {
-            get { return _movementDirection; }
-            set { _movementDirection = value; }
         }
     }
 }
