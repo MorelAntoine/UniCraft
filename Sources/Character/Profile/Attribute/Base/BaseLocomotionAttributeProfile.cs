@@ -13,6 +13,7 @@ namespace UniCraft.Character.Profile.Attribute.Base
         [SerializeField, Range(0f, 20f)] private float _glideSpeed = 6.8f;
         [SerializeField, Range(0f, 6f)] private float _jumpHeight = 2.7f;
         [SerializeField, Range(0f, 20f)] private float _runSpeed = 5.8f;
+        [SerializeField, Range(60f, 140f)] private float _turnSpeed = 88f;
         [SerializeField, Range(0f, 8f)] private float _walkSpeed = 2.4f;
 
         //////////////////////////////
@@ -41,6 +42,12 @@ namespace UniCraft.Character.Profile.Attribute.Base
         {
             get { return _runSpeed; }
             set { _runSpeed = value; }
+        }
+
+        public float TurnSpeed
+        {
+            get { return _turnSpeed; }
+            set { _turnSpeed = value; }
         }
 
         public float WalkSpeed
