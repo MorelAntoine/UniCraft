@@ -13,33 +13,69 @@ namespace UniCraft.Character.MotionStateMachine
         ////////// Attribute //////////
         ///////////////////////////////
 
-        ////////////////////////////////////////////////////////
-        ////////// Motion State Machine Configuration //////////
+        ///////////////////////////////////
+        ////////// Configuration //////////
         
-        [CustomHeader("Motion State Machine Configuration", 1)]
-        [SerializeField, DisableInInspector(2)] private bool _use3DMode;
+        [CustomHeader("Configuration")]
+        [SerializeField, DisableInInspector(1)] private bool _use3DMode;
 
+        ///////////////////////////
+        ////////// Input //////////
+
+        ////////// Action //////////
+
+        [CustomHeader("Action Input")]
+        [SerializeField, DisableInInspector(1)] private bool _crouch;
+        [SerializeField, DisableInInspector(1)] private bool _jump;
+        [SerializeField, DisableInInspector(1)] private bool _run;
+        
+        ////////// Axis //////////
+        
+        [CustomHeader("Axis Input")]
+        [SerializeField, DisableInInspector(1)] private Vector3 _movementDirection;
+        
         //////////////////////////////
         ////////// Property //////////
         //////////////////////////////
-        
-        ////////////////////////////////////////////////////////
-        ////////// Motion State Machine Configuration //////////
+
+        ///////////////////////////////////
+        ////////// Configuration //////////
 
         public bool Use3DMode
         {
             get { return _use3DMode; }
             set { _use3DMode = value; }
         }
-        
-        ////////////////////////////
-        ////////// Method //////////
-        ////////////////////////////
 
-        /// <summary>
-        /// Resets all the MotionInformation datas
-        /// </summary>
-        public void Reset()
-        {}
+        ///////////////////////////
+        ////////// Input //////////
+
+        ////////// Action //////////
+
+        public bool Crouch
+        {
+            get { return _crouch; }
+            set { _crouch = value; }
+        }
+
+        public bool Jump
+        {
+            get { return _jump; }
+            set { _jump = value; }
+        }
+
+        public bool Run
+        {
+            get { return _run; }
+            set { _run = value; }
+        }
+
+        ////////// Axis //////////
+
+        public Vector3 MovementDirection
+        {
+            get { return _movementDirection; }
+            set { _movementDirection = value; }
+        }
     }
 }
