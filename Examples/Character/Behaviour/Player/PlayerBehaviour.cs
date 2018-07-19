@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using UniCraft.Character.Behaviour;
+using UnityEngine;
 
-namespace UniCraft.Character.Behaviour.Player
+namespace UniCraft.Examples.Character.Behaviour.Player
 {
 	public class PlayerBehaviour : ACharacterBehaviour
 	{

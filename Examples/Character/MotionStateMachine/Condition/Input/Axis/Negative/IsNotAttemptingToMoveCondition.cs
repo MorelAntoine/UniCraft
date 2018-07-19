@@ -1,7 +1,9 @@
-﻿using UniCraft.Character.System;
+﻿using UniCraft.Character.MotionStateMachine;
+using UniCraft.Character.MotionStateMachine.Condition;
+using UniCraft.Character.System;
 using UnityEngine;
 
-namespace UniCraft.Character.MotionStateMachine.Condition.Input.Axis.Negative
+namespace UniCraft.Examples.Character.MotionStateMachine.Condition.Input.Axis.Negative
 {
 	[CreateAssetMenu(menuName = "UniCraft/Character/Condition//Input/Axis/Positive/IsNotAttemptingToMove")]
 	public class IsNotAttemptingToMoveCondition : AMotionCondition

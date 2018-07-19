@@ -1,7 +1,9 @@
-﻿using UniCraft.Character.System;
+﻿using UniCraft.Character.MotionStateMachine;
+using UniCraft.Character.MotionStateMachine.State;
+using UniCraft.Character.System;
 using UnityEngine;
 
-namespace UniCraft.Character.MotionStateMachine.State.Locomotion
+namespace UniCraft.Examples.Character.MotionStateMachine.State.Locomotion
 {
 	[CreateAssetMenu(menuName = "UniCraft/Character/State/Locomotion/Walk")]
 	public class WalkState : AMotionState

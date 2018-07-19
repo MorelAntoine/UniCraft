@@ -1,4 +1,4 @@
-﻿namespace UniCraft.Character.System.Humanoid.Human
+﻿namespace UniCraft.Examples.Character.System.Humanoid.Human
 {
 	/// <inheritdoc/>
 	/// <summary>

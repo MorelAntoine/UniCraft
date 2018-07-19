@@ -1,4 +1,6 @@
-﻿namespace UniCraft.Character.System.Humanoid
+﻿using UniCraft.Character.System;
+
+namespace UniCraft.Examples.Character.System.Humanoid
 {
 	/// <inheritdoc/>
 	/// <summary>

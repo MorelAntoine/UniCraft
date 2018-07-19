@@ -1,7 +1,9 @@
-﻿using UniCraft.Character.System;
+﻿using UniCraft.Character.MotionStateMachine;
+using UniCraft.Character.MotionStateMachine.Condition;
+using UniCraft.Character.System;
 using UnityEngine;
 
-namespace UniCraft.Character.MotionStateMachine.Condition.Input.Action.Positive
+namespace UniCraft.Examples.Character.MotionStateMachine.Condition.Input.Action.Positive
 {
 	[CreateAssetMenu(menuName = "UniCraft/Character/Condition/Input/Action/Positive/IsAttemptingToRun")]
 	public class IsAttemptingToRunCondition : AMotionCondition
