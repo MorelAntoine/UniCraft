@@ -30,25 +30,17 @@ namespace UniCraft.Character.MotionStateMachine
         /////////////////////////////////
         ////////// Information //////////
         
-        [SectionHeader("INFORMATION", 5f, 10f)]
-        
-        ////////// Motion //////////
-        
+        [CustomHeader("Information")]
         [SerializeField] private MotionInformation _motionInformation;
-        
-        ////////// State //////////
-        
-        [CustomHeader("State")]
         [SerializeField, DisableInInspector(1)] private AMotionState _currentState;
         [SerializeField, DisableInInspector(1)] private AMotionState _previousState;
         
         /////////////////////////////
         ////////// Setting //////////
 
-        [SectionHeader("SETTING", 5f, 10f)]
-        
-        [SerializeField] private AMotionState _entryState;
-        [SerializeField] private bool _useDebugLog;
+        [CustomHeader("Setting")]
+        [SerializeField, IndentLevel(1)] private AMotionState _entryState;
+        [SerializeField, IndentLevel(1)] private bool _useDebugLog;
         
         /////////////////////////////////////
         ////////// Warning Message //////////
@@ -131,7 +123,7 @@ namespace UniCraft.Character.MotionStateMachine
                 _currentState = _entryState;
             else
                 Debug.LogError(NoEntryState);
-            _motionInformation.Use3DMode = _characterSystem.GetType() == typeof(ACharacterSystem3D);
+            _motionInformation.Use3DMode = _characterSystem.GetType().IsSubclassOf(typeof(ACharacterSystem3D));
         }
     }
 }
