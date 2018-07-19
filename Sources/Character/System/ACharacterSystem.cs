@@ -1,12 +1,12 @@
-﻿using UniCraft.Attribute;
-using UniCraft.Character.Profile.Attribute.Base;
+﻿using UniCraft.Character.Profile.Attribute.Base;
+using UniCraft.Character.Profile.Information.Base;
 using UnityEngine;
 
 namespace UniCraft.Character.System
 {
 	/// <inheritdoc/>
 	/// <summary>
-	/// Base class to define a character system
+	/// Base class to create a character system
 	/// </summary>
 	[DisallowMultipleComponent]
 	public abstract class ACharacterSystem : MonoBehaviour
@@ -15,36 +15,21 @@ namespace UniCraft.Character.System
 		////////// Attribute //////////
 		///////////////////////////////
 
-		[CustomHeader("Base Attribute")]
-		[SerializeField] private LocomotionAttributeProfile _locomotionAttributes;
+		[SerializeField] private BaseLocomotionAttributeProfile _baseLocomotionAttribute;
+		[SerializeField] private BasePersonalInformationProfile _basePersonalInformation;
 		
 		//////////////////////////////
 		////////// Property //////////
 		//////////////////////////////
 
-		public LocomotionAttributeProfile LocomotionAttributes
+		public BaseLocomotionAttributeProfile BaseLocomotionAttribute
 		{
-			get { return _locomotionAttributes; }
+			get { return _baseLocomotionAttribute; }
 		}
 
-		////////////////////////////
-		////////// Method //////////
-		////////////////////////////
-		
-		///////////////////////////////////////////////
-		////////// ACharacterSystem Callback //////////
-
-		/// <summary>
-		/// Loads all the required components for the character system
-		/// </summary>
-		protected abstract void LoadComponents();
-		
-		////////////////////////////////////////////
-		////////// MonoBehaviour Callback //////////
-
-		protected virtual void Awake()
+		public BasePersonalInformationProfile BasePersonalInformation
 		{
-			LoadComponents();
+			get { return _basePersonalInformation; }
 		}
 	}
 }

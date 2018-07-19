@@ -1,23 +1,21 @@
-﻿using UniCraft.Attribute;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace UniCraft.Character.System
 {
 	/// <inheritdoc/>
 	/// <summary>
-	/// Base class to create a 2D character system
+	/// Base class to create a character system 2D
 	/// </summary>
 	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
-	public class ACharacterSystem2D : ACharacterSystem
+	public abstract class ACharacterSystem2D : ACharacterSystem
 	{
 		///////////////////////////////
 		////////// Attribute //////////
 		///////////////////////////////
 
-		[CustomHeader("Base Component")]
-		[SerializeField, IndentLevel(1)] private Animator _animator;
-		[SerializeField, IndentLevel(1)] private Collider2D _collider2D;
-		[SerializeField, IndentLevel(1)] private Rigidbody2D _rigidbody2D;
+		[SerializeField] private Animator _animator;
+		[SerializeField] private Collider2D _collider2D;
+		[SerializeField] private Rigidbody2D _rigidbody2D;
 		
 		//////////////////////////////
 		////////// Property //////////
@@ -42,7 +40,7 @@ namespace UniCraft.Character.System
 		////////// Method //////////
 		////////////////////////////
 
-		protected override void LoadComponents()
+		protected virtual void Awake()
 		{
 			if (_animator == null) _animator = GetComponent<Animator>();
 			if (_collider2D == null) _collider2D = GetComponent<Collider2D>();

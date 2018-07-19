@@ -1,16 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class HumanSystem2D : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+﻿namespace UniCraft.Character.System.Humanoid.Human
+{
+	/// <inheritdoc/>
+	/// <summary>
+	/// Base class to create a human system 2D
+	/// </summary>
+	public class HumanSystem2D : AHumanoidSystem2D
+	{
 	}
 }
