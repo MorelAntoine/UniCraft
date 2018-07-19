@@ -57,7 +57,6 @@ namespace UniCraft.Character.Behaviour
 		/// </summary>
 		protected virtual void Update()
 		{
-			MotionInformation.Reset();
 			UpdateMotionInformation();
 		}
 	}
