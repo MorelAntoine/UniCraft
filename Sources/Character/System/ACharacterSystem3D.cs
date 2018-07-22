@@ -18,9 +18,9 @@ namespace UniCraft.Character.System
 		////////// Component //////////
 		
 		[CustomHeader("Component")]
-		[SerializeField] private Animator _animator;
-		[SerializeField] private Collider _collider;
-		[SerializeField] private Rigidbody _rigidbody;
+		[SerializeField, IndentLevel(1)] private Animator _animator;
+		[SerializeField, IndentLevel(1)] private Collider _collider;
+		[SerializeField, IndentLevel(1)] private Rigidbody _rigidbody;
 		
 		//////////////////////////////
 		////////// Property //////////
