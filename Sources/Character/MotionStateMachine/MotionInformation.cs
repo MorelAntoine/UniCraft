@@ -16,23 +16,15 @@ namespace UniCraft.Character.MotionStateMachine
         ///////////////////////////////////
         ////////// Configuration //////////
         
-        [CustomHeader("Configuration")]
-        [SerializeField, DisableInInspector(1)] private bool _use3DMode;
+        private bool _use3DMode;
 
         ///////////////////////////
         ////////// Input //////////
 
-        ////////// Action //////////
-
-        [CustomHeader("Action Input")]
-        [SerializeField, DisableInInspector(1)] private bool _crouch;
-        [SerializeField, DisableInInspector(1)] private bool _jump;
-        [SerializeField, DisableInInspector(1)] private bool _run;
-        
-        ////////// Axis //////////
-        
-        [CustomHeader("Axis Input")]
-        [DisableInInspector(1)] public Vector3 MovementDirection;
+        [DisableInInspector] public Vector3 Direction;
+        [SerializeField, DisableInInspector] private bool _crouch;
+        [SerializeField, DisableInInspector] private bool _jump;
+        [SerializeField, DisableInInspector] private bool _run;
         
         //////////////////////////////
         ////////// Property //////////
@@ -49,8 +41,6 @@ namespace UniCraft.Character.MotionStateMachine
 
         ///////////////////////////
         ////////// Input //////////
-
-        ////////// Action //////////
 
         public bool Crouch
         {

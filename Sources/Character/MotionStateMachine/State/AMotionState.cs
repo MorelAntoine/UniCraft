@@ -1,5 +1,4 @@
-﻿using UniCraft.Attribute;
-using UniCraft.Character.MotionStateMachine.Transition;
+﻿using UniCraft.Character.MotionStateMachine.Transition;
 using UniCraft.Character.System;
 using UnityEngine;
 
@@ -23,7 +22,6 @@ namespace UniCraft.Character.MotionStateMachine.State
         /////////////////////////////
         ////////// Setting //////////
         
-        [CustomHeader("Setting")]
         [SerializeField] private MotionTransition[] _transitions;
         
         ////////////////////////////
@@ -51,12 +49,12 @@ namespace UniCraft.Character.MotionStateMachine.State
         /// </summary>
         /// <param name="cs">The ACharacterSystem of the motion state machine</param>
         /// <param name="mi">The MotionInformation of the motion state machine</param>
-        public void Run(ACharacterSystem cs, MotionInformation mi)
+        public void Move(ACharacterSystem cs, MotionInformation mi)
         {
             if (mi.Use3DMode)
-                Run3D(cs as ACharacterSystem3D, mi);
+                Move3D(cs as ACharacterSystem3D, mi);
             else
-                Run2D(cs as ACharacterSystem2D, mi);
+                Move2D(cs as ACharacterSystem2D, mi);
         }
 
         /// <summary>
@@ -64,13 +62,13 @@ namespace UniCraft.Character.MotionStateMachine.State
         /// </summary>
         /// <param name="cs2D">The ACharacterSystem2D of the motion state machine</param>
         /// <param name="mi">The MotionInformation of the motion state machine</param>
-        protected abstract void Run2D(ACharacterSystem2D cs2D, MotionInformation mi);
+        protected abstract void Move2D(ACharacterSystem2D cs2D, MotionInformation mi);
         
         /// <summary>
         /// Runs the state action for the 3D space
         /// </summary>
         /// <param name="cs3D">The ACharacterSystem3D of the motion state machine</param>
         /// <param name="mi">The MotionInformation of the motion state machine</param>
-        protected abstract void Run3D(ACharacterSystem3D cs3D, MotionInformation mi);
+        protected abstract void Move3D(ACharacterSystem3D cs3D, MotionInformation mi);
     }
 }

@@ -23,14 +23,13 @@ namespace UniCraft.Character.MotionStateMachine.Transition
         
         ////////// Condition //////////
         
-        [CustomHeader("Condition")]
         [SerializeField] private AMotionCondition[] _conditions;
         
         ////////// Exit State //////////
         
         [CustomHeader("Exit State")]
-        [SerializeField, IndentLevel(1)] private AMotionState _stateOnSuccess;
-        [SerializeField, IndentLevel(1)] private AMotionState _stateOnFailure;
+        [SerializeField] private AMotionState _stateOnSuccess;
+        [SerializeField] private AMotionState _stateOnFailure;
         
         ////////////////////////////
         ////////// Method //////////

@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-namespace UniCraft.Character.Profile.Information
+namespace UniCraft.Character.Profile
 {
+	/// <summary>
+	/// Profile class used to contains all the primary information of a character
+	/// </summary>
 	[global::System.Serializable]
 	public class BaseInformationProfile
 	{
@@ -18,6 +21,7 @@ namespace UniCraft.Character.Profile.Information
 		public string Name
 		{
 			get { return _name; }
+			set { _name = value; }
 		}
 	}
 }

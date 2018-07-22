@@ -1,4 +1,4 @@
-﻿using UniCraft.Attribute;
+﻿using UniCraft.EnvironmentContext;
 using UnityEngine;
 
 namespace UniCraft.Character.System
@@ -7,33 +7,29 @@ namespace UniCraft.Character.System
 	/// <summary>
 	/// Base class to create a character system 2D
 	/// </summary>
-	[RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
+	[RequireComponent(typeof(Collider2D), typeof(EnvironmentContext2D), typeof(Rigidbody2D))]
 	public abstract class ACharacterSystem2D : ACharacterSystem
 	{
 		///////////////////////////////
 		////////// Attribute //////////
 		///////////////////////////////
 
-		///////////////////////////////
-		////////// Component //////////
-		
-		[CustomHeader("Component")]
-		[SerializeField, IndentLevel(1)] private Animator _animator;
-		[SerializeField, IndentLevel(1)] private Collider2D _collider2D;
-		[SerializeField, IndentLevel(1)] private Rigidbody2D _rigidbody2D;
+		private Collider2D _collider2D;
+		private EnvironmentContext2D _environmentContext2D;
+		private Rigidbody2D _rigidbody2D;
 		
 		//////////////////////////////
 		////////// Property //////////
 		//////////////////////////////
 
-		public Animator Animator
-		{
-			get { return _animator; }
-		}
-
 		public Collider2D Collider2D
 		{
 			get { return _collider2D; }
+		}
+
+		public EnvironmentContext2D EnvironmentContext2D
+		{
+			get { return _environmentContext2D; }
 		}
 
 		public Rigidbody2D Rigidbody2D
@@ -47,9 +43,9 @@ namespace UniCraft.Character.System
 
 		protected override void LoadComponents()
 		{
-			if (_animator == null) _animator = GetComponent<Animator>();
-			if (_collider2D == null) _collider2D = GetComponent<Collider2D>();
-			if (_rigidbody2D == null) _rigidbody2D = GetComponent<Rigidbody2D>();
+			_collider2D = GetComponent<Collider2D>();
+			_environmentContext2D = GetComponent<EnvironmentContext2D>();
+			_rigidbody2D = GetComponent<Rigidbody2D>();
 		}
 	}
 }

@@ -1,6 +1,5 @@
 ﻿using UniCraft.Attribute;
-using UniCraft.Character.Profile.Attribute;
-using UniCraft.Character.Profile.Information;
+using UniCraft.Character.Profile;
 using UnityEngine;
 
 namespace UniCraft.Character.System
@@ -16,39 +15,42 @@ namespace UniCraft.Character.System
 		////////// Attribute //////////
 		///////////////////////////////
 
-		//////////////////////////////////
-		////////// Base Profile //////////
-		
 		[CustomHeader("Base Profile")]
-		[SerializeField] private BaseInformationProfile _baseInformation;
-		[SerializeField] private LocomotionAttributeProfile _locomotionAttribute;
+		[SerializeField] private BaseInformationProfile _baseInformationProfile;
+		[SerializeField] private BaseLocomotionProfile _baseLocomotionProfile;
 		
 		//////////////////////////////
 		////////// Property //////////
 		//////////////////////////////
 
-		public BaseInformationProfile BaseInformation
+		public BaseInformationProfile BaseInformationProfile
 		{
-			get { return _baseInformation; }
+			get { return _baseInformationProfile; }
 		}
 
-		public LocomotionAttributeProfile LocomotionAttribute
+		public BaseLocomotionProfile BaseLocomotionProfile
 		{
-			get { return _locomotionAttribute; }
+			get { return _baseLocomotionProfile; }
 		}
 
 		////////////////////////////
 		////////// Method //////////
 		////////////////////////////
+		
+		///////////////////////////////////////////////
+		////////// ACharacterSystem Callback //////////
+
+		/// <summary>
+		/// Callback used to load all the components of the character system
+		/// </summary>
+		protected abstract void LoadComponents();
+
+		////////////////////////////////////////////
+		////////// MonoBehaviour Callback //////////
 
 		protected virtual void Awake()
 		{
 			LoadComponents();
 		}
-
-		/// <summary>
-		/// Callback to load all the required components for the character system
-		/// </summary>
-		protected abstract void LoadComponents();
 	}
 }

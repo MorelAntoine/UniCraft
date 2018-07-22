@@ -30,17 +30,25 @@ namespace UniCraft.Character.MotionStateMachine
         /////////////////////////////////
         ////////// Information //////////
         
-        [CustomHeader("Information")]
+        [SectionHeader("Information")]
+        
+        ////////// Motion //////////
+        
+        [CustomHeader("Motion")]
         [SerializeField] private MotionInformation _motionInformation;
-        [SerializeField, DisableInInspector(1)] private AMotionState _currentState;
-        [SerializeField, DisableInInspector(1)] private AMotionState _previousState;
+        
+        ////////// Motion State //////////
+        
+        [CustomHeader("Motion State")]
+        [SerializeField, DisableInInspector] private AMotionState _currentState;
+        [SerializeField, DisableInInspector] private AMotionState _previousState;
         
         /////////////////////////////
         ////////// Setting //////////
 
-        [CustomHeader("Setting")]
-        [SerializeField, IndentLevel(1)] private AMotionState _entryState;
-        [SerializeField, IndentLevel(1)] private bool _useDebugLog;
+        [SectionHeader("Setting")]
+        [SerializeField] private AMotionState _entryState;
+        [SerializeField] private bool _useDebugLog;
         
         /////////////////////////////////////
         ////////// Warning Message //////////
@@ -111,7 +119,7 @@ namespace UniCraft.Character.MotionStateMachine
         /// </summary>
         private void RunCurrentState()
         {
-            _currentState.Run(_characterSystem, _motionInformation);
+            _currentState.Move(_characterSystem, _motionInformation);
         }
 
         /// <summary>

@@ -1,39 +1,35 @@
-﻿using UniCraft.Attribute;
+﻿using UniCraft.EnvironmentContext;
 using UnityEngine;
 
 namespace UniCraft.Character.System
 {
-	/// <inheritdoc />
+	/// <inheritdoc/>
 	/// <summary>
 	/// Base class to create a character system 3D
 	/// </summary>
-	[RequireComponent(typeof(Collider), typeof(Rigidbody))]
+	[RequireComponent(typeof(Collider), typeof(EnvironmentContext3D), typeof(Rigidbody))]
 	public abstract class ACharacterSystem3D : ACharacterSystem
 	{
 		///////////////////////////////
 		////////// Attribute //////////
 		///////////////////////////////
 		
-		///////////////////////////////
-		////////// Component //////////
-		
-		[CustomHeader("Component")]
-		[SerializeField, IndentLevel(1)] private Animator _animator;
-		[SerializeField, IndentLevel(1)] private Collider _collider;
-		[SerializeField, IndentLevel(1)] private Rigidbody _rigidbody;
+		private Collider _collider;
+		private EnvironmentContext3D _environmentContext3D;
+		private Rigidbody _rigidbody;
 		
 		//////////////////////////////
 		////////// Property //////////
 		//////////////////////////////
 
-		public Animator Animator
-		{
-			get { return _animator; }
-		}
-
 		public Collider Collider
 		{
 			get { return _collider; }
+		}
+
+		public EnvironmentContext3D EnvironmentContext3D
+		{
+			get { return _environmentContext3D; }
 		}
 
 		public Rigidbody Rigidbody
@@ -47,9 +43,9 @@ namespace UniCraft.Character.System
 
 		protected override void LoadComponents()
 		{
-			if (_animator == null) _animator = GetComponent<Animator>();
-			if (_collider == null) _collider = GetComponent<Collider>();
-			if (_rigidbody == null) _rigidbody = GetComponent<Rigidbody>();
+			_collider = GetComponent<Collider>();
+			_environmentContext3D = GetComponent<EnvironmentContext3D>();
+			_rigidbody = GetComponent<Rigidbody>();
 		}
 	}
 }
