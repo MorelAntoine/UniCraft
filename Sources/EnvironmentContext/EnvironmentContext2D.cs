@@ -7,6 +7,7 @@ namespace UniCraft.EnvironmentContext
 	/// <summary>
 	/// Component class used to obtain information between the GameObject and the 2D environment
 	/// </summary>
+	[AddComponentMenu("UniCraft/EnvironmentContext2D")]
 	[DisallowMultipleComponent]
 	[RequireComponent(typeof(Collider2D))]
 	public class EnvironmentContext2D : MonoBehaviour
