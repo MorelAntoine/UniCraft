@@ -6,13 +6,5 @@
 	/// </summary>
 	public class HumanSystem3D : AHumanoidSystem3D
 	{
-		////////////////////////////
-		////////// Method //////////
-		////////////////////////////
-
-		protected override void LoadComponents()
-		{
-			base.LoadComponents();
-		}
 	}
 }

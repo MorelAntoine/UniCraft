@@ -8,13 +8,5 @@ namespace UniCraft.Examples.Character.System.Humanoid
 	/// </summary>
 	public abstract class AHumanoidSystem3D : ACharacterSystem3D
 	{
-		////////////////////////////
-		////////// Method //////////
-		////////////////////////////
-
-		protected override void LoadComponents()
-		{
-			base.LoadComponents();
-		}
 	}
 }
