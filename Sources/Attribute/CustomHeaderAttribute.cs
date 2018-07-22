@@ -24,7 +24,7 @@ namespace UniCraft.Attribute
         ////////// Method //////////
         ////////////////////////////
         
-        public CustomHeaderAttribute(string label, int indentLevel = -1, float spaceBefore = 6f, float spaceAfter = 2.5f)
+        public CustomHeaderAttribute(string label, int indentLevel = -1, float spaceBefore = 3f, float spaceAfter = 1.5f)
         {
             Label = label;
             LabelSize = EditorStyles.boldLabel.CalcSize(new GUIContent(Label));
@@ -46,8 +46,8 @@ namespace UniCraft.Attribute
 
         private const float GuiHeight = 20f;
         private const float GuiStartY = 2f;
-        private const float TmpSpaceAfter = 2.5f;
-        private const float TmpSpaceBefore = 6f;
+        private const float TmpSpaceAfter = 1.5f;
+        private const float TmpSpaceBefore = 3f;
         
         //////////////////////////////
         ////////// Resource //////////
