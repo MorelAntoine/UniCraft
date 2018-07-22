@@ -1,4 +1,5 @@
-﻿using UniCraft.Character.Profile.Attribute;
+﻿using UniCraft.Attribute;
+using UniCraft.Character.Profile.Attribute;
 using UniCraft.Character.Profile.Information;
 using UnityEngine;
 
@@ -15,6 +16,10 @@ namespace UniCraft.Character.System
 		////////// Attribute //////////
 		///////////////////////////////
 
+		//////////////////////////////////
+		////////// Base Profile //////////
+		
+		[CustomHeader("Base Profile")]
 		[SerializeField] private BaseInformationProfile _baseInformation;
 		[SerializeField] private LocomotionAttributeProfile _locomotionAttribute;
 		

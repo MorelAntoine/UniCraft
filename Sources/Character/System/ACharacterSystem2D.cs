@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UniCraft.Attribute;
+using UnityEngine;
 
 namespace UniCraft.Character.System
 {
@@ -13,6 +14,10 @@ namespace UniCraft.Character.System
 		////////// Attribute //////////
 		///////////////////////////////
 
+		///////////////////////////////
+		////////// Component //////////
+		
+		[CustomHeader("Component")]
 		[SerializeField] private Animator _animator;
 		[SerializeField] private Collider2D _collider2D;
 		[SerializeField] private Rigidbody2D _rigidbody2D;
